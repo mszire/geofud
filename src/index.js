@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import './materialize.min.css';
 //import './materialize.min.js';
 import App from './App';
-import Form from './Form';
+//import Form from './Form';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Form />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
