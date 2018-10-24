@@ -17,17 +17,29 @@ class Form extends Component {
 
     submitForm(event){
         var item = {
-            name: event.refs.iname,
-            protein: event.refs.protein,
-            fat: event.refs.fat,
-            iron: event.refs.iron,
-            calcium: event.refs.calcium,
-            carbohydrate: event.refs.carbohydrate
+            name: event.target.name.value,
+            protein: event.target.protein.value,
+            fat: event.target.fat.value,
+            iron: event.target.iron.value,
+            calcium: event.target.calcium.value,
+            carbohydrate: event.target.carbohydrate.value
         }
 
         console.log(item);
 
-        //action="http://localhost:3450/new" method="POST" enctype="application/x-www-form-urlencoded"
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                //var data = JSON.parse(this.responseText);
+                //ReactDOM.render(<Table name={data.name} calcium={data.calcium} carbohydrate={data.carbohydrate} fat={data.fat} iron={data.iron} protein={data.protein}/>, document.getElementById('result-view'));
+            }
+        };
+
+        xhttp.open("POST", 'http://localhost:3450/item/new', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(item);
 
     }
   
@@ -51,7 +63,9 @@ class Form extends Component {
 
 
 
-                    <form className="row" >
+                    <form className="row" action="http://localhost:3450/item/new" method="POST" encType="application/x-www-form-urlencoded">
+                    {/* <form className="row" onSubmit={this.submitForm}> */}
+
                         <div className="col s10 push-s1 ">
                             <div className="card z-depth-4 padded-comfortable no-padded-bottom">
                                 <div className="row">
@@ -60,48 +74,50 @@ class Form extends Component {
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <input id="Item-Name" type="text" className="validate" ref="iname"></input>
+                                        <input id="Item-Name" type="text" className="validate" ref="name" name="name"></input>
                                         <label for="Item-Name">Item Name</label>
                                     </div>
                                 </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <input id="Item-Description" type="text" className="validate" ref="iron"></input>
+                                        <input id="Item-Description" type="text" className="validate" ref="iron" name="iron"></input>
                                         <label for="Item-Description">Iron</label>
                                     </div>
                                 </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <input id="Serving-Size" type="text" className="validate" ref="carbohydrate"></input>
+                                        <input id="Serving-Size" type="text" className="validate" ref="carbohydrate" name="carbohydrate"></input>
                                         <label for="Serving-Size">Carbohydrate</label>
                                     </div>
                                 </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <input id="Serving-Per-Container" type="text" className="validate" ref="calcium"></input>
+                                        <input id="Serving-Per-Container" type="text" className="validate" ref="calcium" name="calcium"></input>
                                         <label for="Serving-Per-Container">Calcium</label>
                                     </div>
                                 </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <input id="Calories" type="text" className="validate" ref="fat"></input>
+                                        <input id="Calories" type="text" className="validate" ref="fat" name="fat"></input>
                                         <label for="Calories">Fat</label>
                                     </div>
                                 </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <input id="Calories-From-Fat" type="text" className="validate" ref="protein"></input>
+                                        <input id="Calories-From-Fat" type="text" className="validate" ref="protein" name="protein"></input>
                                         <label for="Calories-From-Fat">Protein</label>
                                     </div>
                                 </div>
                                     
                                 <div className="row">
-                                    <div className="btn" onClick={this.submitForm}>Create Item</div>
+                                    <div className="col s12 center">
+                                        <button className="btn" type="submit">Create Item</button>
+                                    </div>
                                 </div>
                                 
                             </div>
