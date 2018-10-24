@@ -61,9 +61,9 @@ class App extends Component {
                         <div className="col s10 push-s1 m8 push-m2 l6 push-l3">
                             <div className="card z-depth-4 padded-comfortable no-padded-bottom">
 
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="search-term" type="text" class="validate" onChange={this.showResult}></input>
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="search-term" type="text" className="validate" onChange={this.showResult}></input>
                                         <label for="search-term">What do you want to look for?</label>
                                     </div>
                                 </div>
