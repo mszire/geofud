@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
+//import './jquery.min.js';
 import './materialize.min.js';
 import Table from './Table';
 import Form from './Form';
@@ -19,7 +20,21 @@ class App extends Component {
 
 
     showResult(event) {
-        ReactDOM.render(<Table name={event.target.value}/>, document.getElementById('result-view'));
+
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                var data = JSON.parse(this.responseText);
+                ReactDOM.render(<Table name={data.name} calcium={data.calcium} carbohydrate={data.carbohydrate} fat={data.fat} iron={data.iron} protein={data.protein}/>, document.getElementById('result-view'));
+            }
+        };
+        xhttp.open("GET", 'http://localhost:3450/item/'+event.target.value, true);
+        xhttp.send();
+
+        
+
     }
   
     showNewItem(event) {

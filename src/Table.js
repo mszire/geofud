@@ -20,7 +20,7 @@ class Table extends Component {
                             <br />
                         </p> 
                         
-                        <table className="col s12">
+                        {/* <table className="col s12">
                             <tr>
                                 <td><b>Amount per Serving</b></td>
                             </tr>
@@ -233,8 +233,33 @@ class Table extends Component {
                                                      2000               20g
                                 </td>
                             </tr>
+                        </table> */}
+
+                        <table className="col s12">
+                            <tr>
+                                <td><b>Calcium</b></td>
+                                <td>{this.props.calcium}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Protein</b></td>
+                                <td>{this.props.protein}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Fat</b></td>
+                                <td>{this.props.fat}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Carbohydrates</b></td>
+                                <td>{this.props.carbohydrate}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Iron</b></td>
+                                <td>{this.props.iron}</td>
+                            </tr>
                         </table>
                     
+
+
 
                     </div>
         );

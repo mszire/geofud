@@ -14,6 +14,22 @@ class Form extends Component {
     showSearch(event) {
         ReactDOM.render(<App />, document.getElementById('root'));
     }
+
+    submitForm(event){
+        var item = {
+            name: event.refs.iname,
+            protein: event.refs.protein,
+            fat: event.refs.fat,
+            iron: event.refs.iron,
+            calcium: event.refs.calcium,
+            carbohydrate: event.refs.carbohydrate
+        }
+
+        console.log(item);
+
+        //action="http://localhost:3450/new" method="POST" enctype="application/x-www-form-urlencoded"
+
+    }
   
 
     render() {
@@ -31,7 +47,70 @@ class Form extends Component {
                         <div className="btn" onClick={this.showSearch}>Search</div>
                     </div>
 
-                    <div className="row">
+
+
+
+
+                    <form className="row" >
+                        <div className="col s10 push-s1 ">
+                            <div className="card z-depth-4 padded-comfortable no-padded-bottom">
+                                <div className="row">
+                                    <h4 className="input-field col s12 light">Enter data for new label</h4>
+                                </div>
+
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="Item-Name" type="text" className="validate" ref="iname"></input>
+                                        <label for="Item-Name">Item Name</label>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="Item-Description" type="text" className="validate" ref="iron"></input>
+                                        <label for="Item-Description">Iron</label>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="Serving-Size" type="text" className="validate" ref="carbohydrate"></input>
+                                        <label for="Serving-Size">Carbohydrate</label>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="Serving-Per-Container" type="text" className="validate" ref="calcium"></input>
+                                        <label for="Serving-Per-Container">Calcium</label>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="Calories" type="text" className="validate" ref="fat"></input>
+                                        <label for="Calories">Fat</label>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="Calories-From-Fat" type="text" className="validate" ref="protein"></input>
+                                        <label for="Calories-From-Fat">Protein</label>
+                                    </div>
+                                </div>
+                                    
+                                <div className="row">
+                                    <div className="btn" onClick={this.submitForm}>Create Item</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </form>
+
+
+
+                    {/* <div className="row">
                         <div className="col s10 push-s1 ">
                             <div className="card z-depth-4 padded-comfortable no-padded-bottom">
                                 <div className="row">
@@ -330,7 +409,8 @@ class Form extends Component {
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+
 
 
                 </div>
