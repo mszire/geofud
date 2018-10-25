@@ -36,3 +36,9 @@
 .no-padded-top {
     padding-top: initial;
 }
+
+
+
+.simpletable, .simpletable tr, .simpletable td {
+    border: 1px solid black;
+}

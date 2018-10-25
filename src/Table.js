@@ -3,7 +3,7 @@ import './App.css';
 import './materialize.min.js';
 
 
-
+import Row from './Row';
 
 
 
@@ -236,7 +236,23 @@ class Table extends Component {
                         </table> */}
 
                         <table className="col s12">
-                            <tr>
+                           
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="Calcium" value={this.props.values.calcium} />
+
+                           
+                           
+                            {/* <tr>
                                 <td><b>Calcium</b></td>
                                 <td>{this.props.calcium}</td>
                             </tr>
@@ -255,7 +271,7 @@ class Table extends Component {
                             <tr>
                                 <td><b>Iron</b></td>
                                 <td>{this.props.iron}</td>
-                            </tr>
+                            </tr> */}
                         </table>
                     
 

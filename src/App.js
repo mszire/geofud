@@ -27,7 +27,13 @@ class App extends Component {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
                 var data = JSON.parse(this.responseText);
-                ReactDOM.render(<Table name={data.name} calcium={data.calcium} carbohydrate={data.carbohydrate} fat={data.fat} iron={data.iron} protein={data.protein}/>, document.getElementById('result-view'));
+
+
+                // ReactDOM.render(<Table name={data.name} calcium={data.calcium} carbohydrate={data.carbohydrate} fat={data.fat} iron={data.iron} protein={data.protein}/>, document.getElementById('result-view'));
+
+                ReactDOM.render(<Table name={data.name} values={data}/>, document.getElementById('result-view'));
+
+
             }
         };
         xhttp.open("GET", 'http://localhost:3450/item/'+event.target.value, true);
