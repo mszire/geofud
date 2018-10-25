@@ -237,18 +237,20 @@ class Table extends Component {
 
                         <table className="col s12">
                            
+                           <Row name="Energy" value={this.props.values.calories} />
+                           <Row name="Fat" value={this.props.values.fat} />
+                           <Row name="Saturated Fat" value={this.props.values.saturatedFat} />
+                           <Row name="Trans Fat" value={this.props.values.transFat} />  
+                           <Row name="UnsaturatedFat" value={this.props.values.unsaturatedFat} />
+                           <Row name="Cholesterol" value={this.props.values.cholesterol} />
+                           <Row name="Sodium" value={this.props.values.sodium} />
+                           <Row name="Fiber" value={this.props.values.fiber} />
+                           <Row name="Protein" value={this.props.values.protein} />
+                           <Row name="Carbohydrate" value={this.props.values.carbohydrate} />
                            <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
-                           <Row name="Calcium" value={this.props.values.calcium} />
+                           <Row name="ServingSize" value={this.props.values.servingSize} />
+                           <Row name="Suger" value={this.props.values.suger} />                     
+                           
 
                            
                            
